@@ -2,12 +2,22 @@ from typing import Literal
 
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, PositiveInt, PositiveFloat, NonNegativeInt, NonNegativeFloat
 
 import predictor
 
 
 app = FastAPI()
+
+app = FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_methods=['GET', 'POST'],
+)
 
 
 class ApplicantData(BaseModel):
