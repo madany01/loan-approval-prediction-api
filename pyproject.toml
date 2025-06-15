@@ -1,3 +1,4 @@
 [tool.black]
 line-length = 97
 skip-string-normalization = true
+requires-python = ">=3.10.7"
